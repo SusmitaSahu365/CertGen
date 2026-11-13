@@ -4,7 +4,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": ">=8.0",
+        "php": ">=8.1",
         "ext-pdo": "*",
         "ext-mbstring": "*",
         "ext-zip": "*",
@@ -13,6 +13,10 @@
     },
     "autoload": {
         "psr-4": { "CertGen\\": "src/" }
+    },
+    "config": {
+        "platform": { "php": "8.1.0" },
+        "sort-packages": true
     },
     "scripts": {
         "test": "php tests/run.php"
