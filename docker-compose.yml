@@ -1,0 +1,31 @@
+# Local run with persistent SQLite storage:   docker compose up --build
+# Then open http://localhost:8080 and create your admin account.
+services:
+  certgen:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      DEMO_MODE: "false"          # "true" adds a banner and a SAMPLE watermark on every PDF
+      # To use MySQL instead of SQLite, uncomment these and the db service below:
+      # DB_DRIVER: mysql
+      # DB_HOST: db
+      # DB_NAME: certgen
+      # DB_USER: certgen
+      # DB_PASS: change-me
+    volumes:
+      - certgen-data:/var/www/html/storage
+
+  # db:
+  #   image: mariadb:11
+  #   environment:
+  #     MARIADB_DATABASE: certgen
+  #     MARIADB_USER: certgen
+  #     MARIADB_PASSWORD: change-me
+  #     MARIADB_RANDOM_ROOT_PASSWORD: "1"
+  #   volumes:
+  #     - db-data:/var/lib/mysql
+
+volumes:
+  certgen-data:
+  # db-data:

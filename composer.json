@@ -1,0 +1,20 @@
+{
+    "name": "certgen/certgen",
+    "description": "Template-driven bulk certificate generator: design a certificate, upload a spreadsheet, download PDFs.",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-mbstring": "*",
+        "ext-zip": "*",
+        "setasign/fpdf": "^1.8",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "autoload": {
+        "psr-4": { "CertGen\\": "src/" }
+    },
+    "scripts": {
+        "test": "php tests/run.php"
+    }
+}

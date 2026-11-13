@@ -1,0 +1,24 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.1', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, zip, gd, pdo_sqlite
+      - name: Install system tools used by the smoke test
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils unzip
+      - run: composer install --no-interaction --prefer-dist
+      - name: Lint
+        run: find src public bin tests config -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+      - name: Unit tests
+        run: php tests/run.php
+      - name: End-to-end smoke test
+        run: bash tests/smoke.sh

@@ -1,0 +1,6 @@
+vendor
+.git
+storage/*.sqlite
+config/config.php
+tests
+docs
