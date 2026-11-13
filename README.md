@@ -203,7 +203,7 @@ Both suites were run against SQLite and MySQL/MariaDB. CI is set up in `.github/
 
 ## Credits
 
-Originally developed as a team diploma project (2023–24
+Originally developed as a team diploma project (2023–24).
 This version is a rewrite by *Susmita Sahu*.
 
 Built with [FPDF](http://www.fpdf.org), [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) and [Bootstrap](https://getbootstrap.com).
