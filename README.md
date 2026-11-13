@@ -49,6 +49,12 @@ an Excel upload, and makes it general:
 - **Accounts.** Administrator and staff roles, hashed passwords, login lock-out after repeated failures.
 - **Safe to demo.** `DEMO_MODE` adds a banner and a SAMPLE watermark to every PDF.
 
+## Live Demo
+
+🔗 **[Visit the Website](https://certgen-2gbo.onrender.com/)**
+
+> The application is deployed on Render and can be accessed through the link above.
+> 
 ## Requirements
 
 - PHP **8.0 or newer** with the `pdo`, `mbstring`, `zip` and `gd` extensions (all on by default in XAMPP)
